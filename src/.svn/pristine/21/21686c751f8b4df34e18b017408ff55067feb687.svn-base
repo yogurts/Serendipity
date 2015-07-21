@@ -1,0 +1,47 @@
+package Testcase;
+
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+
+import com.PageObjects.LoginPage;
+
+import TestVerify.StockVerify_bak;
+import Testcase.LoginTest;
+
+/** 
+ * @author Lili.Sun  
+ * @date 2015年6月17日 上午11:00:45 
+ *  
+ */
+
+
+public class DelStockTest{
+	  
+	private StringBuffer verificationErrors = new StringBuffer();
+	WebDriver driver = PageTest.driver;
+		
+	@Test
+	public void testDelStock() throws Exception {
+		driver.findElement(By.xpath("//a[@id='search']/span")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[2]/table/tbody/tr/td/div/input")).click();
+		driver.findElement(By.xpath("//a[3]/span/span[2]")).click();
+		driver.findElement(By.xpath("//div[4]/a/span/span")).click();
+		Thread.sleep(4000);
+		StockVerify_bak.delStockVerify(driver);
+	}
+	
+	
+	private boolean isElementPresent(By by) {
+		try {
+			PageTest.driver.findElement(by);
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
+
+}

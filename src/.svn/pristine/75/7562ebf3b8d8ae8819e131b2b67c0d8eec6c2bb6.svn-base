@@ -1,0 +1,33 @@
+package Testcase;
+
+import org.apache.log4j.Logger;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+
+import TestVerify.StockVerify;
+import Testcase.PageTest;
+
+/** 
+ * @author Lili.Sun  
+ * @date 2015年6月19日 上午11:01:54 
+ *  
+ */
+
+public class LogoutTest{
+	
+	private static Logger log = Logger.getLogger(LogoutTest.class.getName());
+	private StringBuffer verificationErrors = new StringBuffer();
+	WebDriver driver = PageTest.driver;
+		
+	@Test
+	public void testLogoutStock() throws Exception {
+		
+		log.info("***Run case of testLogoutStock.***");
+		driver.switchTo().defaultContent();
+		driver.findElement(By.cssSelector("a[title=\"退出\"] > img")).click();
+		StockVerify.logoutStockVerify(driver);
+	}
+	
+}

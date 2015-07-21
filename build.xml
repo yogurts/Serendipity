@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+	<project basedir="." default="junit" name="MangementAutoTest">
+    <property name="source.dir" value="src" />  
+	<property name="build.dir" value="build" />   
+	<property name="lib.dir" value="lib" />  
+ 	<property name="classes.dir" value="${build.dir}/classes" />
+		<tstamp prefix="build.">
+          <format property="TimeSign" pattern="yyyy-MM-dd HH.mm.ss"/>
+        </tstamp>  
+	<property name="report.dir" value="report/${build.TimeSign}"/>
+	<property name="screenshot.dir" value="report/Screenshot" />
+    <property name="screenshotBackup.dir" value="report/ScreenshotBackUp" />    
+    <property name="screenshotEach.dir" value="${report.dir}/Screenshot" />
+
+   <!-- ================================================================== -->  
+     <!-- C L E A N                                                          -->  
+     <!-- ================================================================== -->  
+     <target name="clean">  
+       <delete dir="${classes.dir}" />
+       <mkdir dir="${classes.dir}" />
+       <mkdir dir="${report.dir}" /> 
+       <move todir="${screenshotBackup.dir}">
+      	 <fileset dir="${screenshot.dir}"/>
+       </move>
+       <delete dir="${screenshot.dir}" />  
+       <mkdir dir="${screenshot.dir}" />            
+       <mkdir dir="${screenshotEach.dir}" />   
+	   <copy todir="${classes.dir}" file="${source.dir}/log4j.properties">
+       </copy>
+       <delete dir="${build.dir}/TestData" />  
+       <mkdir dir="${build.dir}/TestData" /> 
+       <copy todir="${build.dir}/TestData">
+         <fileset dir="./TestData"/>
+       </copy>
+       <delete dir="report/report_latest" /> 
+       <mkdir dir="report/report_latest" /> 
+     </target>  
+ 
+     <!-- ================================================================== -->  
+     <!-- C O M P I L E                                                      -->  
+     <!-- ================================================================== -->  
+     <target name="compile" depends="clean">  
+      <!-- local project jars -->
+      <patternset id="lib.includes.compile">
+       <include name="*.jar" />  
+      </patternset>  
+      <fileset dir="${lib.dir}" id="lib.compile">  
+       <patternset refid="lib.includes.compile" />  
+      </fileset>  
+      <pathconvert targetos="windows" property="libs.compile" refid="lib.compile" />  
+      <!-- compile -->  
+      <javac srcdir="${source.dir}" destdir="${classes.dir}" classpath="${libs.compile}" includes="**/*.java" debug="true" includeantruntime="on">  
+      </javac>  
+     </target>  
+
+	 <!-- ================================================================== -->  
+     <!-- J U N I T                                                          -->  
+     <!-- ================================================================== -->  
+     <target name="junit" depends="compile" description="run junit test">  
+       <mkdir dir="${report.dir}/XML" /> 
+       <echo message = "start run Junit test"/>
+       <tstamp><format property="stratTime" pattern="MM/dd/yyyy  HH:mm:ss" /></tstamp>
+       <junit printsummary="on" fork="true" haltonfailure="false" failureproperty="tests.failed" showoutput="true">  
+         <classpath>  
+           <pathelement path="${classes.dir}" />  
+           <fileset dir="${lib.dir}">  
+             <include name="**/*.jar" />  
+           </fileset>  
+         </classpath>  
+       <formatter type="xml" />  
+       <batchtest todir="${report.dir}/XML">  
+         <fileset dir="${classes.dir}">         
+         	
+         	<include name="**/StockSetupTest.class" />
+            <!-- <include name="**/PageTest.class" />
+         	<include name="**/LoginTest.class" />
+         	-->  
+		 </fileset>  
+       </batchtest>  
+      </junit>       	
+      <junitreport todir="${report.dir}">  
+        <fileset dir="${report.dir}/XML">  
+          <include name="TEST-*.xml" />  
+        </fileset>  
+        <report todir="${report.dir}" />  
+      </junitreport>  
+      <copy todir="${screenshotEach.dir}">
+         <fileset dir="${screenshot.dir}"/>
+      </copy>
+      <copy todir="report/report_latest">
+      	<fileset dir="${report.dir}"/>
+      </copy>
+      <fail if="tests.failed">
+     	tests.failed=${tests.failed}
+     	*******************************************************************
+     	****  One or more tests failed! check the report for detail... ****
+     	*******************************************************************
+      </fail>
+ 
+     <echo message = "end running junit test"/>
+     </target>  
+ 
+</project>

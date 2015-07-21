@@ -1,0 +1,21 @@
+2015-07-07 13:41:38,343 INFO  DefaultRequestDirector.java 723 - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+2015-07-07 13:41:38,345 INFO  DefaultRequestDirector.java 730 - Retrying request
+2015-07-07 13:41:38,486 INFO  PageTest.java 51 - ***Run case of testLogin.***
+2015-07-07 13:56:28,321 INFO  DefaultRequestDirector.java 723 - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+2015-07-07 13:56:28,323 INFO  DefaultRequestDirector.java 730 - Retrying request
+2015-07-07 13:56:28,376 INFO  PageTest.java 48 - ***Run case of testLogin.***
+2015-07-07 13:56:40,122 INFO  LoginTest.java 35 - ***Run case of testLogin.***
+2015-07-07 13:56:41,275 INFO  LoginTest.java 44 - TestData/Stock/LoginUser.csv
+2015-07-07 13:57:57,473 INFO  LoginTS.java 32 - Title is:框架V2.5
+2015-07-07 13:58:17,176 INFO  ControlsStockTest.java 98 - ***Run case of testSingleSelect.***
+2015-07-07 13:58:18,165 INFO  ControlsStockTest.java 108 - ***Run case of testMultiSelectTree.***
+2015-07-07 13:58:23,984 INFO  ControlsStockTest.java 85 - ***Run case of testMultiSelect.***
+2015-07-07 13:58:46,131 INFO  ControlsStockTest.java 125 - ***Run case of testSingleSelectTree.***
+2015-07-07 13:58:52,630 INFO  ControlsStockTest.java 50 - ***Run case of testInputBox.***
+2015-07-07 13:58:52,631 INFO  ControlsStockTest.java 55 - TestData/Stock/StockData.csv
+2015-07-07 13:59:52,766 INFO  ControlsStockTS.java 44 - Title is:框架V2.5
+2015-07-07 13:59:52,767 INFO  ControlsStockTest.java 72 - ***Run case of testDateControl.***
+2015-07-07 13:59:54,530 INFO  AddStockTest.java 27 - ***Run case of testSave.***
+2015-07-07 14:00:02,346 INFO  AlterStockTest.java 27 - ***Run case of testAlterStock.***
+2015-07-07 14:00:18,628 INFO  DelStockTest.java 28 - ***Run case of testDelStock.***
+2015-07-07 14:00:27,432 INFO  LogoutTest.java 28 - ***Run case of testLogoutStock.***

@@ -1,0 +1,23 @@
+2015-07-13 11:09:29,349 INFO  DefaultRequestDirector.java 723 - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+2015-07-13 11:09:29,381 INFO  DefaultRequestDirector.java 730 - Retrying request
+2015-07-13 11:09:29,444 INFO  PageTest.java 47 - ***Run case of testLogin.***
+2015-07-13 11:10:52,227 INFO  DefaultRequestDirector.java 723 - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+2015-07-13 11:10:52,227 INFO  DefaultRequestDirector.java 730 - Retrying request
+2015-07-13 11:10:52,274 INFO  PageTest.java 47 - ***Run case of testLogin.***
+2015-07-13 14:39:15,151 INFO  DefaultRequestDirector.java 723 - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+2015-07-13 14:39:15,171 INFO  DefaultRequestDirector.java 730 - Retrying request
+2015-07-13 14:39:15,236 INFO  PageTest.java 47 - ***Run case of testLogin.***
+2015-07-13 14:44:43,595 INFO  DefaultRequestDirector.java 723 - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+2015-07-13 14:44:43,598 INFO  DefaultRequestDirector.java 730 - Retrying request
+2015-07-13 14:44:43,645 INFO  PageTest.java 47 - ***Run case of testLogin.***
+2015-07-13 14:44:46,235 INFO  LoginTest.java 37 - ***Run case of testLogin.***
+2015-07-13 14:48:37,935 INFO  DefaultRequestDirector.java 723 - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+2015-07-13 14:48:37,937 INFO  DefaultRequestDirector.java 730 - Retrying request
+2015-07-13 14:48:37,985 INFO  PageTest.java 47 - ***Run case of testLogin.***
+2015-07-13 14:48:40,360 INFO  LoginTest.java 37 - ***Run case of testLogin.***
+2015-07-13 17:13:45,371 INFO  DefaultRequestDirector.java 723 - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+2015-07-13 17:13:45,373 INFO  DefaultRequestDirector.java 730 - Retrying request
+2015-07-13 17:13:45,466 INFO  PageTest.java 47 - ***Run case of testLogin.***
+2015-07-13 17:29:53,927 INFO  DefaultRequestDirector.java 723 - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+2015-07-13 17:29:53,929 INFO  DefaultRequestDirector.java 730 - Retrying request
+2015-07-13 17:29:53,962 INFO  PageTest.java 47 - ***Run case of testLogin.***

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="AP-CHN-LP140034" name="TestSuite.StockSetupTest" skipped="0" tests="12" time="218.894" timestamp="2015-07-14T02:19:46">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="lib.dir" value="lib" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="/C:/tool/eclipse-apms-Nov07/plugins/org.eclipse.pde.build_3.8.100.v20130514-1028/templates/" />
+    <property name="sun.management.compiler" value="HotSpot Client Compiler" />
+    <property name="os.name" value="Windows 7" />
+    <property name="sun.boot.class.path" value="C:\Program Files (x86)\Java\jdk1.7.0_13\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.7.0_13\jre\lib\rt.jar;C:\Program Files (x86)\Java\jdk1.7.0_13\jre\lib\sunrsasign.jar;C:\Program Files (x86)\Java\jdk1.7.0_13\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.7.0_13\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.7.0_13\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.7.0_13\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.7.0_13\jre\classes;C:\PROGRA~2\HP\QUICKT~1\bin\JAVA_S~1\classes;C:\PROGRA~2\HP\QUICKT~1\bin\JAVA_S~1\classes\jasmine.jar" />
+    <property name="TODAY" value="July 14 2015" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="C:\tool\eclipse-apms-Nov07\plugins\apache-ant-1.9.6" />
+    <property name="java.runtime.version" value="1.7.0_13-b20" />
+    <property name="screenshotEach.dir" value="report/2015-07-14 10.19.44/Screenshot" />
+    <property name="user.name" value="lili.sun" />
+    <property name="libs.compile" value="C:\works\workspaces\ampsWeb\MangementAutoTest\lib\commons-configuration-1.10-test-sources.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\commons-configuration-1.10.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\commons-lang-2.6.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\commons-lang3-3.1.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\commons-logging-1.1.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\javacsv.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\log4j-1.2.16.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\ojdbc6-11.2.0.1.0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\selenium-java-2.35.0-srcs.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\selenium-java-2.35.0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\selenium-java-2.39.0-srcs.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\selenium-java-2.39.0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\selenium-server-standalone-2.35.0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\slf4j-api-1.7.5.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\slf4j-log4j12-1.6.0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\testlink-java-api-1.9.4-0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\ws-commons-util-1.0.2.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\xmlrpc-client-3.1-sources.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\xmlrpc-client-3.1.3.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\xmlrpc-client-3.1.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\xmlrpc-common-3.1-sources.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\xmlrpc-common-3.1.jar" />
+    <property name="build.dir" value="build" />
+    <property name="build.TimeSign" value="2015-07-14 10.19.44" />
+    <property name="user.language" value="zh" />
+    <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.7.0_13\jre\bin" />
+    <property name="ant.project.default-target" value="junit" />
+    <property name="ant.project.name" value="MangementAutoTest" />
+    <property name="DSTAMP" value="20150714" />
+    <property name="java.version" value="1.7.0_13" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="32" />
+    <property name="java.endorsed.dirs" value="C:\Program Files (x86)\Java\jdk1.7.0_13\jre\lib\endorsed" />
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86" />
+    <property name="sun.jnu.encoding" value="GBK" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="classes.dir" value="build/classes" />
+    <property name="java.class.version" value="51.0" />
+    <property name="user.country" value="CN" />
+    <property name="java.home" value="C:\Program Files (x86)\Java\jdk1.7.0_13\jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="C:\works\workspaces\ampsWeb\MangementAutoTest\build.xml" />
+    <property name="os.version" value="6.1" />
+    <property name="screenshotBackup.dir" value="report/ScreenshotBackUp" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="23.7-b01" />
+    <property name="report.dir" value="report/2015-07-14 10.19.44" />
+    <property name="user.variant" value="" />
+    <property name="build.DSTAMP" value="20150714" />
+    <property name="ant.library.dir" value="C:\tool\eclipse-apms-Nov07\plugins\apache-ant-1.9.6\lib" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="user.script" value="" />
+    <property name="eclipse.pdebuild.scripts" value="/C:/tool/eclipse-apms-Nov07/plugins/org.eclipse.pde.build_3.8.100.v20130514-1028/scripts/" />
+    <property name="user.home" value="C:\Windows\system32\config\systemprofile" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.7.0_13\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;.;C:\Program Files (x86)\Java\jdk1.7.0_13\bin;C:\app\Lili.Sun\product\11.2.0\dbhome_1\bin;C:\app\Lili.Sun\product\11.2.0\client_1\bin;C:\Perl\site\bin;C:\Perl\bin;C:\Program Files (x86)\Git\bin;C:\CI\sonar-runner-2.0\\bin;C:\CI\apache-ant-1.9.2-bin\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft Application Virtualization Client;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\CI\apache-maven-2.2.1\bin;C:\strawberry\c\bin;C:\strawberry\perl\bin;C:\Program Files\nodejs\;C:\tool\HashiCorp\Vagrant\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\lili.sun\AppData\Roaming\npm;C:\Program Files (x86)\HP\QuickTest Professional\bin;." />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="build.TODAY" value="July 14 2015" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner TestSuite.StockSetupTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\works\workspaces\ampsWeb\MangementAutoTest\report\2015-07-14 10.19.44\XML\TEST-TestSuite.StockSetupTest.xml crashfile=C:\works\workspaces\ampsWeb\MangementAutoTest\junitvmwatcher3646625903232925543.properties propsfile=C:\works\workspaces\ampsWeb\MangementAutoTest\junit2264250031295612807.properties" />
+    <property name="java.class.path" value="C:\works\workspaces\ampsWeb\MangementAutoTest\build\classes;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\commons-configuration-1.10-test-sources.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\commons-configuration-1.10.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\commons-lang-2.6.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\commons-lang3-3.1.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\commons-logging-1.1.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\javacsv.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\log4j-1.2.16.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\ojdbc6-11.2.0.1.0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\selenium-java-2.35.0-srcs.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\selenium-java-2.35.0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\selenium-java-2.39.0-srcs.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\selenium-java-2.39.0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\selenium-server-standalone-2.35.0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\slf4j-api-1.7.5.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\slf4j-log4j12-1.6.0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\testlink-java-api-1.9.4-0.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\ws-commons-util-1.0.2.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\xmlrpc-client-3.1-sources.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\xmlrpc-client-3.1.3.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\xmlrpc-client-3.1.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\xmlrpc-common-3.1-sources.jar;C:\works\workspaces\ampsWeb\MangementAutoTest\lib\xmlrpc-common-3.1.jar;C:\works\workspaces\ampsWeb\MangementAutoTest;C:\Program Files (x86)\Java\jdk1.7.0_13\lib\dt.jar;C:\Program Files (x86)\Java\jdk1.7.0_13\lib\tools.jar;C:\tool\apache-jmeter-2.11\lib\ext\ApacheJMeter_core.jar;C:\tool\apache-jmeter-2.11\lib\logkit-2.0.jar;C:\tool\eclipse-apms-Nov07\plugins\apache-ant-1.9.6\lib\ant-launcher.jar;C:\tool\eclipse-apms-Nov07\plugins\apache-ant-1.9.6\lib\ant.jar;C:\tool\eclipse-apms-Nov07\plugins\apache-ant-1.9.6\lib\ant-junit.jar;C:\tool\eclipse-apms-Nov07\plugins\apache-ant-1.9.6\lib\ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.9.6 compiled on June 29 2015" />
+    <property name="TSTAMP" value="1019" />
+    <property name="stratTime" value="07/14/2015  10:19:45" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="screenshot.dir" value="report/Screenshot" />
+    <property name="java.vm.specification.version" value="1.7" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="ant.file.type.MangementAutoTest" value="file" />
+    <property name="sun.os.patch.level" value="Service Pack 1" />
+    <property name="ant.file.MangementAutoTest" value="C:\works\workspaces\ampsWeb\MangementAutoTest\build.xml" />
+    <property name="eclipse.pdebuild.home" value="/C:/tool/eclipse-apms-Nov07/plugins/org.eclipse.pde.build_3.8.100.v20130514-1028/./" />
+    <property name="java.io.tmpdir" value="C:\Users\lili.sun\AppData\Local\Temp\" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="os.arch" value="x86" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="C:\Program Files (x86)\Java\jdk1.7.0_13\jre\lib\ext;C:\Windows\Sun\Java\lib\ext" />
+    <property name="user.dir" value="C:\works\workspaces\ampsWeb\MangementAutoTest" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM" />
+    <property name="basedir" value="C:\works\workspaces\ampsWeb\MangementAutoTest" />
+    <property name="ant.java.version" value="1.7" />
+    <property name="ant.core.lib" value="C:\tool\eclipse-apms-Nov07\plugins\apache-ant-1.9.6\lib\ant.jar" />
+    <property name="file.encoding" value="GBK" />
+    <property name="source.dir" value="src" />
+    <property name="java.specification.version" value="1.7" />
+    <property name="ant.project.invoked-targets" value="junit" />
+    <property name="build.TSTAMP" value="1019" />
+  </properties>
+  <testcase classname="Testcase.PageTest" name="testPage" time="4.216" />
+  <testcase classname="Testcase.LoginTest" name="testLogin" time="71.745" />
+  <testcase classname="Testcase.ControlsStockTest" name="testSingleSelect" time="1.077" />
+  <testcase classname="Testcase.ControlsStockTest" name="testMultiSelectTree" time="5.862" />
+  <testcase classname="Testcase.ControlsStockTest" name="testMultiSelect" time="22.21" />
+  <testcase classname="Testcase.ControlsStockTest" name="testSingleSelectTree" time="7.224" />
+  <testcase classname="Testcase.ControlsStockTest" name="testInputBox" time="59.33" />
+  <testcase classname="Testcase.ControlsStockTest" name="testDateControl" time="1.913" />
+  <testcase classname="Testcase.AddStockTest" name="testSave" time="3.852" />
+  <testcase classname="Testcase.AlterStockTest" name="testAlterStock" time="16.599" />
+  <testcase classname="Testcase.DelStockTest" name="testDelStock" time="8.811" />
+  <testcase classname="Testcase.LogoutTest" name="testLogoutStock" time="2.084" />
+  <system-out><![CDATA[10:19:50,499  INFO DefaultHttpClient:723 - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+10:19:50,501  INFO DefaultHttpClient:730 - Retrying request
+10:19:50,538  INFO PageTest:47 - ***Run case of testLogin.***
+10:19:51,160  INFO LoginTest:37 - ***Run case of testLogin.***
+10:19:51,734  INFO LoginTest:45 - TestData/Stock/LoginUser.csv
+10:21:02,407  INFO LoginTS:32 - Title is:框架V2.5
+10:21:16,505  INFO ControlsStockTest:126 - ***Run case of testSingleSelect.***
+10:21:17,583  INFO ControlsStockTest:146 - ***Run case of testMultiSelectTree.***
+10:21:23,449  INFO ControlsStockTest:104 - ***Run case of testMultiSelect.***
+10:21:45,664  INFO ControlsStockTest:172 - ***Run case of testSingleSelectTree.***
+10:21:52,926  INFO ControlsStockTest:54 - ***Run case of testInputBox.***
+10:21:52,927  INFO ControlsStockTest:59 - TestData/Stock/StockData.csv
+10:22:52,255  INFO ControlsStockTS:44 - Title is:框架V2.5
+10:22:52,284  INFO ControlsStockTest:81 - ***Run case of testDateControl.***
+10:22:54,200  INFO AddStockTest:32 - ***Run case of testSave.***
+10:22:58,056  INFO AlterStockTest:32 - ***Run case of testAlterStock.***
+10:23:14,658  INFO DelStockTest:33 - ***Run case of testDelStock.***
+10:23:23,471  INFO LogoutTest:33 - ***Run case of testLogoutStock.***
+]]></system-out>
+  <system-err><![CDATA[Started InternetExplorerDriver server (64-bit)
+2.35.3.0
+Listening on port 33285
+]]></system-err>
+</testsuite>

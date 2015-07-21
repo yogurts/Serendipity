@@ -1,0 +1,52 @@
+package com.Model;
+
+import java.io.IOException;
+import java.nio.charset.Charset;
+
+import oracle.net.aso.a;
+import bsh.This;
+
+import com.Core.CommFunc;
+import com.csvreader.CsvReader;
+
+/** 
+ * @author Lili.Sun  
+ * @date 2015年7月1日 下午2:42:33 
+ *  
+ */
+public class Test {
+
+	static String verify_title;
+	static String verify_stockName;
+	static String verify_stockAlter;
+	static String verify_logoutUrl;
+	
+	public void testStockVerify() throws Exception {
+		
+		//验证数据读取
+		try {
+			String filePath = CommFunc.getTestDataFile();
+			CsvReader reader = new CsvReader(filePath,',',Charset.forName("UTF-8"));
+			//log.info(filePath);
+			reader.readHeaders();
+			
+			while (reader.readRecord()) {			
+				verify_title = reader.get("VerifyTitle");
+				verify_stockName = reader.get("VerifyStockName");
+				verify_stockAlter = reader.get("VerifyStockAlter");
+				verify_logoutUrl = reader.get("VerifyLogoutUrl");				
+			}
+			
+
+		} catch (IOException e) {
+			e.printStackTrace();
+			return;
+		}
+	}
+	
+	public static void main(String[] args) throws Exception {
+		Test tt = new Test();
+		tt.testStockVerify();
+		System.out.println(verify_title);
+	}
+}
