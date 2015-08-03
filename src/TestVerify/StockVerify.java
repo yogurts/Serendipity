@@ -8,12 +8,14 @@ import java.nio.charset.Charset;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.commons.collections.map.StaticBucketMap;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 
 import TestScript.NowDate;
 import Testcase.PageTest;
+import TestcaseControls.RadioboxInitial;
 
 import com.Core.AssertUtils;
 import com.Core.CommFunc;
@@ -31,7 +33,7 @@ import com.csvreader.CsvReader;
 
 public class StockVerify {
 	
-	private static Logger log = Logger.getLogger(StockVerify.class.getName());
+	private static final Logger log = LoggerFactory.getLogger(StockVerify.class);
 
 	static NowDate today = new NowDate();
 	static StockBeanCl sbc =  new StockBeanCl();

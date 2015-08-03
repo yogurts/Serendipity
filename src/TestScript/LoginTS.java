@@ -1,7 +1,7 @@
 package TestScript;
 
-
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.openqa.selenium.WebDriver;
 
 import com.PageObjects.LoginPage;
@@ -14,7 +14,7 @@ import com.csvreader.CsvReader;
  */
 
 public class LoginTS {
-	private static Logger log = Logger.getLogger(LoginTS.class.getName());
+	private static final Logger log = LoggerFactory.getLogger(LoginTS.class);
 	
 	public static void login(WebDriver driver, CsvReader reader) throws Exception {
 		String account = reader.get("Account");

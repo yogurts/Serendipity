@@ -22,7 +22,6 @@ import Testcase.*;
 	AlterStockTest.class,
 	DelStockTest.class,
 	LogoutTest.class
-
 	})
 public class StockSetupTest {
 }
