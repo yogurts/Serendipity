@@ -37,6 +37,7 @@ public class RadioChildTest {
 					.click();
 			driver.findElement(By.xpath("//div[@id='_easyui_combobox_i6_2']")).click();
 			
+			
 		} catch (Exception e) {
 			log.error("testRadioboxChild is error", e);
 			e.printStackTrace();
@@ -50,6 +51,5 @@ public class RadioChildTest {
 		
 		PrintFlag = false;
 	  }
-
-	  
+	  	  
 }
