@@ -1,16 +1,11 @@
 package TestVerify;
 
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
-
 import java.io.IOException;
 import java.nio.charset.Charset;
 
 import org.junit.Assert;
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.apache.commons.collections.map.StaticBucketMap;
 import org.openqa.selenium.*;
 
 import TestScript.NowDate;

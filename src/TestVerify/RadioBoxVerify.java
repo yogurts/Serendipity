@@ -6,10 +6,6 @@ import java.nio.charset.Charset;
 
 
 
-
-
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.junit.Assert;
@@ -39,8 +35,7 @@ public class RadioBoxVerify {
 	
 	private static final Logger log = LoggerFactory.getLogger(RadioBoxVerify.class);
 
-	static NowDate today = new NowDate();
-	static StockBeanCl sbc =  new StockBeanCl();
+	static ControlBeanCl cbc =  new ControlBeanCl();
 	static WebDriver driver = RadioboxInitial.driver;
 	
 	static String verifyCommonName;
@@ -50,6 +45,7 @@ public class RadioBoxVerify {
 	static String verifyRequiredfieldName;
 	static String verifyOperatorName;
 	static String verifyOperatorValue;
+	static String verifySearchName;
 	static RadioBoxVerify sv = new RadioBoxVerify();
 	
 	public void testRadioVerify() throws Exception {
@@ -68,7 +64,8 @@ public class RadioBoxVerify {
 				verifyDisplayValue = reader.get("Verify_DisplayValue");	
 				verifyRequiredfieldName = reader.get("Verify_RequiredfieldName");
 				verifyOperatorName = reader.get("Verify_OperatorName");
-				verifyOperatorValue = reader.get("Verify_OperatorValue");	
+				verifyOperatorValue = reader.get("Verify_OperatorValue");
+				verifySearchName = reader.get("Verify_SearchName");	
 			}
 	
 		} catch (IOException e) {
@@ -92,7 +89,7 @@ public class RadioBoxVerify {
 	
 
 	public static void displayVerify(WebDriver driver) throws Exception  {
-		
+		sv.testRadioVerify();
 		//显示存在"有缺省值"检索框 、显示顺序
 		Assert.assertEquals(driver.findElement(By.xpath("//form[@id='commonForm']/table/tbody/tr/td/div/ul/li[2]/span")).getText(),verifyDisplayName);
 		//单选下拉
@@ -103,7 +100,7 @@ public class RadioBoxVerify {
 	}
 	
 	public static void requiredFieldVerify(WebDriver driver) throws Exception  {
-		
+		sv.testRadioVerify();
 		//显示存在"必填项"检索框 
 		Assert.assertEquals(driver.findElement(By.xpath("//form[@id='commonForm']/table/tbody/tr/td/div/ul/li[3]/span")).getText(),verifyRequiredfieldName);
 		//单选下拉
@@ -116,7 +113,7 @@ public class RadioBoxVerify {
 	
 	
 	public static void operatorVerify(WebDriver driver) throws Exception  {
-		
+		sv.testRadioVerify();
 		//显示存在"操作符大于"检索框 
 		Assert.assertEquals(driver.findElement(By.xpath("//form[@id='commonForm']/table/tbody/tr/td/div/ul/li[4]/span")).getText(),verifyOperatorName);
 		//单选下拉
@@ -129,7 +126,7 @@ public class RadioBoxVerify {
 	
 	
 	public static void hiddenVerify(WebDriver driver) throws Exception  {
-		
+		sv.testRadioVerify();
 		//显示存在"隐藏标题"检索框 
 		Assert.assertEquals(driver.findElement(By.xpath("//table[@id='ad_input_table']/tbody/tr/td/ul/li[3]/span[2]/span")).getText(),"");
 		//单选下拉
@@ -137,7 +134,12 @@ public class RadioBoxVerify {
 		
 	}
 
-	
+	public static void searchVerify(WebDriver driver) throws Exception  {
+		sv.testRadioVerify();
+		//cbc.checkStockName(verifySearchName);
+		AssertUtils.assertTrue(cbc.checkStockName(verifySearchName), "Search is correct");
+	    
+	}
 	
 }
 

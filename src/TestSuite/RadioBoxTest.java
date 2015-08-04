@@ -10,6 +10,7 @@ import TestcaseControls.RadioHiddenTest;
 import TestcaseControls.RadioOperatorTest;
 import TestcaseControls.RadioParentTest;
 import TestcaseControls.RadioRequiredfieldTest;
+import TestcaseControls.RadioSearchTest;
 import TestcaseControls.RadioboxInitial;
 import TestcaseControls.RadioDisplayTest;
 
@@ -30,7 +31,8 @@ import TestcaseControls.RadioDisplayTest;
 	RadioHiddenTest.class,
 	RadioRequiredfieldTest.class,
 	RadioParentTest.class,
-	RadioChildTest.class
+	RadioChildTest.class,
+	RadioSearchTest.class
 	})
 public class RadioBoxTest {
 }
