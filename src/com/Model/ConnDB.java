@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConnDB {
-
+/*
 	private Connection conn = null;
 	String ip = "10.243.140.163";
 	String sid = "headdbgz";
@@ -30,4 +30,6 @@ public class ConnDB {
 		
 		return conn;
 	}
+	
+*/
 }

@@ -2,6 +2,8 @@ package com.Model;
 
 import java.sql.*;
 
+import com.Core.DBOracle;
+
 public class ControlBeanCl {
 	
 	private java.sql.Statement sm=null;
@@ -9,13 +11,15 @@ public class ControlBeanCl {
 	private Connection conn=null;
 	private String stockName=null;
 	
+	DBOracle dbo =  new DBOracle();
+	
 	//验证股票名称是否存在
 	public boolean checkStockName(String stockName){
 
 		try {
 			
 			//到数据库中去验证
-			conn=new ConnDB().getConn();
+			conn = dbo.getConn();
 			//创建Statement
 			sm=conn.createStatement();
 			
@@ -41,32 +45,10 @@ public class ControlBeanCl {
 			e.printStackTrace();
 		} finally{
 			//关闭资源
-			this.close();
+			dbo.closeDB(conn, sm, rs);
 		}
-		return true;
+		return false;
 
-	}
-
-
-	//关闭资源函数
-	public void close(){
-		
-		try {
-			if (rs!=null) {
-				rs.close();
-				rs=null;
-			}
-			if (sm!=null) {
-				sm.close();
-				sm=null;
-			}
-			if (conn!=null) {
-				conn.close();
-				conn=null;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 }

@@ -2,12 +2,15 @@ package com.Model;
 
 import java.sql.*;
 
+import com.Core.DBOracle;
+
 public class StockBeanCl {
 	
 	private java.sql.Statement sm=null;
 	private ResultSet rs=null;
 	private Connection conn=null;
 	private String stockName=null;
+	DBOracle dbo =  new DBOracle();
 	
 	//验证股票名称是否存在
 	public String checkStockName(String tradeDate){
@@ -15,7 +18,8 @@ public class StockBeanCl {
 		try {
 			
 			//到数据库中去验证
-			conn=new ConnDB().getConn();
+			//conn=new ConnDB().getConn();
+			conn = dbo.getConn();
 			//创建Statement
 			sm=conn.createStatement();
 			
@@ -36,14 +40,15 @@ public class StockBeanCl {
 			e.printStackTrace();
 		} finally{
 			//关闭资源
-			this.close();
+			//this.close();
+			dbo.closeDB(conn, sm, rs);
 		}
 		//取出股票名称
 		
 		return stockName;
 	}
 
-
+/*
 	//关闭资源函数
 	public void close(){
 		
@@ -64,5 +69,5 @@ public class StockBeanCl {
 			e.printStackTrace();
 		}
 	}
-
+*/
 }
