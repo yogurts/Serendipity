@@ -26,7 +26,7 @@ public class DBOracle {
 			
 			// Get test server
 			Properties props2 = new Properties();
-			FileInputStream fin2 = new FileInputStream("src/com/resources/InitialConfig.properties");
+			FileInputStream fin2 = new FileInputStream("src/com/resource/InitialConfig.properties");
 			props2.load(fin2);
 			fin2.close();
 			String BROWSER_URL =  props2.getProperty("BROWSER_URL");

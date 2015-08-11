@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
 
+import TestScript.RadioBoxTS;
 import Testcase.PageTest;
 
 import com.Core.CaptureScreenshot;
@@ -33,9 +34,7 @@ public class RadioParentTest {
 	  public void testRadioboxParent() throws Exception {
 		log.info("***Run case of testRadioboxParent.***");
 		try {
-			driver.findElement(By.xpath("//form[@id='commonForm']/table/tbody/tr/td/div/ul/li[5]/span[2]/span/span/a"))
-					.click();
-			driver.findElement(By.xpath("//div[@id='_easyui_combobox_i5_7']")).click();
+			RadioBoxTS.parentRadio(driver);
 			
 		} catch (Exception e) {
 			log.error("testRadioboxParent is error", e);

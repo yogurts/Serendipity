@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
 
+import TestScript.RadioBoxTS;
 import TestVerify.RadioBoxVerify;
 import Testcase.PageTest;
 
@@ -34,9 +35,7 @@ public class RadioOperatorTest {
 	  public void testRadioboxOperator() throws Exception {
 		log.info("***Run case of testRadioboxOperator.***");
 		try {
-			driver.findElement(By.xpath("//form[@id='commonForm']/table/tbody/tr/td/div/ul/li[4]/span[2]/span/span/a"))
-					.click();
-			driver.findElement(By.xpath("//div[@id='_easyui_combobox_i4_0']")).click();
+			RadioBoxTS.operatorRadio(driver);
 			RadioBoxVerify.operatorVerify(driver);
 			
 		} catch (Exception e) {

@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
 
+import TestScript.RadioBoxTS;
 import Testcase.PageTest;
 
 import com.Core.CaptureScreenshot;
@@ -33,10 +34,7 @@ public class RadioChildTest {
 	  public void testRadioboxChild() throws Exception {
 		log.info("***Run case of testRadioboxChild.***");
 		try {
-			driver.findElement(By.xpath("//form[@id='commonForm']/table/tbody/tr/td/div/ul/li[6]/span[2]/span/span/a"))
-					.click();
-			driver.findElement(By.xpath("//div[@id='_easyui_combobox_i6_2']")).click();
-			
+			RadioBoxTS.childRadio(driver);
 			
 		} catch (Exception e) {
 			log.error("testRadioboxChild is error", e);

@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
 
+import TestScript.RadioBoxTS;
 import TestVerify.RadioBoxVerify;
 import Testcase.PageTest;
 
@@ -34,12 +35,8 @@ public class RadioRequiredfieldTest {
 	  public void testRadioboxRequiredfield() throws Exception {
 		log.info("***Run case of testRadioboxRequiredfield.***");
 		try {
-			
-			driver.findElement(By.xpath("//a[@id='search']/span")).click();
+			RadioBoxTS.requiredfieldRadio(driver);
 			RadioBoxVerify.requiredFieldVerify(driver);
-			//driver.findElement(By.xpath("//form[@id='commonForm']/table/tbody/tr/td/div/ul/li[3]/span[2]/span/span/a"))
-			//		.click();
-			//driver.findElement(By.xpath("//div[@id='_easyui_combobox_i3_1']")).click();
 			
 		} catch (Exception e) {
 			log.error("testRadioboxRequiredfield is error", e);

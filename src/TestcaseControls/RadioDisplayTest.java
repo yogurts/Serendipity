@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
 
+import TestScript.RadioBoxTS;
 import TestVerify.RadioBoxVerify;
 import Testcase.PageTest;
 
@@ -27,16 +28,14 @@ public class RadioDisplayTest {
 	  private static final Logger log = LoggerFactory.getLogger(RadioDisplayTest.class);
 	  private boolean PrintFlag = true;
 	  private String ScreenShotFileName = "";
-	  static WebDriver driver = RadioboxInitial.driver;
+	  WebDriver driver = RadioboxInitial.driver;
 
 	  //标题、  显示顺序、  缺省值
 	  @Test
 	  public void testRadioboxDisplay() throws Exception {
 		log.info("***Run case of testRadioboxDisplay.***");
 		try {
-			driver.findElement(By.xpath("//form[@id='commonForm']/table/tbody/tr/td/div/ul/li[2]/span[2]/span/span/a"))
-					.click();
-			driver.findElement(By.xpath("//div[@id='_easyui_combobox_i2_1']")).click();
+			RadioBoxTS.displayRadio(driver);
 			RadioBoxVerify.displayVerify(driver);
 			
 		} catch (Exception e) {

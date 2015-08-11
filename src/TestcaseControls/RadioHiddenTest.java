@@ -8,6 +8,8 @@ import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
 
+import TestScript.RadioBoxTS;
+import TestSuite.RadioBoxTest;
 import TestVerify.RadioBoxVerify;
 import Testcase.PageTest;
 
@@ -34,10 +36,7 @@ public class RadioHiddenTest {
 	  public void testRadioboxHidden() throws Exception {
 		log.info("***Run case of testRadioboxHidden.***");
 		try {
-			driver.findElement(By.xpath("//form[@id='commonForm']/table/tbody/tr/td/div/div/span[2]/a")).click();
-			driver.findElement(By.xpath("//table[@id='ad_input_table']/tbody/tr/td/ul/li[3]/span[2]/span/span/a")).click();
-			driver.findElement(By.xpath("//div[@id='_easyui_combobox_i9_2']")).click();
-			driver.findElement(By.xpath("//div[3]/a[2]/span/span[2]")).click();
+			RadioBoxTS.hiddenRadio(driver);
 			RadioBoxVerify.hiddenVerify(driver);
 			
 		} catch (Exception e) {
