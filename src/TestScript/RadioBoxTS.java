@@ -11,6 +11,11 @@ import com.PageObjects.RadioboxPage;
 import com.csvreader.CsvReader;
 
 
+/**
+ * @author lili.sun
+ * @date 2015年7月20日 上午11:07:15 
+ *
+ */
 public class RadioBoxTS{
 	
 	private static Logger log = Logger.getLogger(RadioBoxTS.class.getName());
@@ -91,6 +96,15 @@ public class RadioBoxTS{
 		Thread.sleep(1000);
 	    
 	    log.info("Title is:" + driver.getTitle());	
+	}
+	
+	public static void outRadio(WebDriver driver) throws Exception {
+		driver.switchTo().defaultContent();
+		rbPage.outradio.click();
+		Thread.sleep(1000);
+	    
+	    log.info("Title is:" + driver.getTitle());	
+		
 	}
 	
 }

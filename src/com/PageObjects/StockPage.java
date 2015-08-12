@@ -1,5 +1,6 @@
 package com.PageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -33,6 +34,45 @@ public class StockPage {
 	@FindBy(xpath = "//div[@id='51c7da04a8b8440aa6582f5827db3d25_modifyDialog']/form/table/tbody/tr[3]/td[2]/span/input")
 	@CacheLookup
 	public WebElement presentPrice;
+	
+	/*
+	 driver.findElement(By.xpath("//a[contains(text(),'股票系统')]")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//div[@id='_easyui_tree_1']/span")).click();
+	    driver.findElement(By.cssSelector("#_easyui_tree_2 > span.tree-title")).click();
+	    Thread.sleep(1000);
+	    driver.switchTo().frame("ifrf");
+	    Thread.sleep(1000);
+	    driver.findElement(By.id("51c7da04a8b8440aa6582f5827db3d25")).click();
+	    Thread.sleep(4000);
+	    driver.findElement(By.cssSelector("span.l-btn-text")).click();
+	 */
+	//Parameter:添加股票
+	@FindBy(xpath = "//a[contains(text(),'股票系统')]")
+	@CacheLookup
+	public WebElement addstock1;
+	
+	
+	//Parameter:添加股票
+	@FindBy(xpath = "//div[@id='_easyui_tree_1']/span")
+	@CacheLookup
+	public WebElement addstock2;
+	
+	//Parameter:添加股票
+	@FindBy(css = "#_easyui_tree_2 > span.tree-title")
+	@CacheLookup
+	public WebElement addstock3;
+	
+	//Parameter:添加股票
+	@FindBy(id = "51c7da04a8b8440aa6582f5827db3d25")
+	@CacheLookup
+	public WebElement addstock4;
+	
+	//Parameter:添加股票
+	@FindBy(css = "span.l-btn-text")
+	@CacheLookup
+	public WebElement addstock5;
+	
 	
 	
 	/**

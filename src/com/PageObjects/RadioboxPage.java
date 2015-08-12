@@ -114,6 +114,11 @@ public class RadioboxPage {
 	@CacheLookup
 	public WebElement search5;
 	
+	//Parameter:退出
+	@FindBy(css = "a[title=\"退出\"] > img")
+	@CacheLookup
+	public WebElement outradio;
+	
 	/**
 	 * Init WebElement
 	 * @param driver

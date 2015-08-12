@@ -39,7 +39,7 @@ public class AlterStockTest{
 			driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input")).clear();
 			driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input")).sendKeys("2");
 			driver.findElement(By.xpath("//div[3]/a/span/span")).click();
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 			StockVerify.alterStockVerify(driver);
 			
 		} catch (Exception e) {

@@ -34,7 +34,8 @@ public class ControlsStockTest{
 		
 	@BeforeClass
 	public static void testAddStock() throws Exception {
-		
+		ControlsStockTS.addStock(driver);
+		/*
 		driver.findElement(By.xpath("//a[contains(text(),'股票系统')]")).click();
 	    Thread.sleep(2000);
 	    driver.findElement(By.xpath("//div[@id='_easyui_tree_1']/span")).click();
@@ -45,7 +46,7 @@ public class ControlsStockTest{
 	    driver.findElement(By.id("51c7da04a8b8440aa6582f5827db3d25")).click();
 	    Thread.sleep(4000);
 	    driver.findElement(By.cssSelector("span.l-btn-text")).click();
-	    
+	    */
 	}
 
 	@Test
@@ -60,7 +61,7 @@ public class ControlsStockTest{
 			reader.readHeaders();
 			
 			while (reader.readRecord()) {			
-			    ControlsStockTS.ControlsStock(driver, reader);
+			    ControlsStockTS.controlsStock(driver, reader);
 				
 			}
 		} catch (Exception e) {

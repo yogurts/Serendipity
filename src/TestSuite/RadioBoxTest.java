@@ -4,6 +4,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import Testcase.*;
+import TestcaseControls.RadioLogoutTest;
 import TestcaseControls.RadioChildTest;
 import TestcaseControls.RadioCommonTest;
 import TestcaseControls.RadioHiddenTest;
@@ -32,7 +33,8 @@ import TestcaseControls.RadioDisplayTest;
 	RadioRequiredfieldTest.class,
 	RadioParentTest.class,
 	RadioChildTest.class,
-	RadioSearchTest.class
+	RadioSearchTest.class,
+	RadioLogoutTest.class
 	})
 public class RadioBoxTest {
 }
