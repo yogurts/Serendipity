@@ -1,6 +1,5 @@
 package TestcaseControls;
 
-import java.nio.charset.Charset;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +12,7 @@ import org.openqa.selenium.*;
 import TestScript.RadioBoxTS;
 import TestVerify.RadioBoxVerify;
 
-import com.Core.CaptureScreenshot;
-import com.Core.CommFunc;
-import com.csvreader.CsvReader;
+import com.Core.BaseClass;
 
 
 /** 
@@ -24,17 +21,27 @@ import com.csvreader.CsvReader;
  *  
  */
 
-public class RadioCommonTest {
+public class RadioCommonTest extends BaseClass{
 	
 	  private static final Logger log = LoggerFactory.getLogger(RadioCommonTest.class);
-	  private boolean PrintFlag = true;
-	  private String ScreenShotFileName = "";
-	  WebDriver driver = RadioboxInitial.driver;
+	  
+	  @Before
+	  public void setUp() throws Exception {
+		    driver.findElement(By.xpath("//a[contains(text(),'股票系统')]")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//div[@id='_easyui_tree_1']/span"))
+					.click();
+			driver.findElement(By.cssSelector("#_easyui_tree_3 > span.tree-title"))
+					.click();
+			driver.switchTo().frame("ifrf");
+	  }
 	  
 	  //基础选项
 	  @Test
 	  public void testRadioboxCommon() throws Exception {
 		log.info("***Run case of testRadioboxCommon.***");
+		PrintFlag = true;
+		
 		try {
 			RadioBoxTS.commonRadio(driver);
 			RadioBoxVerify.commonVerify(driver);
@@ -42,14 +49,9 @@ public class RadioCommonTest {
 		} catch (Exception e) {
 			log.error("testRadioboxCommon is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
 		}		
-			
-		
 		PrintFlag = false;
 	  }
 

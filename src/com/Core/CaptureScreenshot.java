@@ -6,15 +6,14 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
-
+import java.net.URI;
+import org.openqa.selenium.TakesScreenshot;
 import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class CaptureScreenshot {
@@ -26,12 +25,12 @@ public class CaptureScreenshot {
 	 * @throws Exception
 	 */
 	public void getScreenshotToFile(String FileName) throws Exception {
-		String sysFilePath = System.getProperty("user.dir") + "\\report\\ScreenShot\\"; 
+		String sysFilePath = System.getProperty("user.dir") + "/report/ScreenShot/"; 
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();   
 		Rectangle screenRectangle = new Rectangle(screenSize);   
 		Robot robot = new Robot();   
 		BufferedImage image = robot.createScreenCapture(screenRectangle);   
-		
+		System.out.println(sysFilePath);
 		ImageIO.write(image, "jpg", new File(sysFilePath + FileName));
      } 
 	
@@ -62,6 +61,7 @@ public class CaptureScreenshot {
      * @return void 
      * @throws
      */
+
     public static void captureScreen(WebDriver dr, String strClassName) throws Exception {
     	String directory = System.getProperty("user.dir") + "/report/ScreenShot/";
     	String captureName = strClassName + "_" + CommFunc.getNowTimeString();
@@ -72,5 +72,4 @@ public class CaptureScreenshot {
     	FileUtils.copyFile (screenShotFile, new File(directory + captureName + format)); 
     	log.info("Screenshot Name: [" + captureName + ".jpg]");
     }
-
 }

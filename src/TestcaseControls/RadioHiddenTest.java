@@ -6,17 +6,9 @@ import org.junit.*;
 
 import static org.junit.Assert.*;
 
-import org.openqa.selenium.*;
-
 import TestScript.RadioBoxTS;
-import TestSuite.RadioBoxTest;
 import TestVerify.RadioBoxVerify;
-import Testcase.PageTest;
-
-import com.Core.CaptureScreenshot;
-import com.Core.CommFunc;
-import com.csvreader.CsvReader;
-
+import com.Core.BaseClass;
 
 /** 
  * @author Lili.Sun  
@@ -24,17 +16,16 @@ import com.csvreader.CsvReader;
  *  
  */
 
-public class RadioHiddenTest {
+public class RadioHiddenTest extends BaseClass{
 	
 	  private static final Logger log = LoggerFactory.getLogger(RadioHiddenTest.class);
-	  private boolean PrintFlag = true;
-	  private String ScreenShotFileName = "";
-	  static WebDriver driver = RadioboxInitial.driver;
 
 	  //高级查询
 	  @Test
 	  public void testRadioboxHidden() throws Exception {
 		log.info("***Run case of testRadioboxHidden.***");
+		PrintFlag = true;
+		
 		try {
 			RadioBoxTS.hiddenRadio(driver);
 			RadioBoxVerify.hiddenVerify(driver);
@@ -42,14 +33,10 @@ public class RadioHiddenTest {
 		} catch (Exception e) {
 			log.error("testRadioboxHidden is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
 		}		
-			
-		
+	
 		PrintFlag = false;
 	  }
 

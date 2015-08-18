@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.Core.BaseClass;
 import com.Core.CaptureScreenshot;
 import com.Core.CommFunc;
 import com.csvreader.CsvReader;
@@ -25,34 +26,21 @@ import java.nio.charset.Charset;
  *  
  */
 
-public class ControlsStockTest{
+public class ControlsStockTest extends BaseClass{
 	
-	private String ScreenShotFileName = "";
 	private static final Logger log = LoggerFactory.getLogger(ControlsStockTest.class);
-	private StringBuffer verificationErrors = new StringBuffer();
-	static WebDriver driver = PageTest.driver;
-		
+	
 	@BeforeClass
 	public static void testAddStock() throws Exception {
 		ControlsStockTS.addStock(driver);
-		/*
-		driver.findElement(By.xpath("//a[contains(text(),'股票系统')]")).click();
-	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("//div[@id='_easyui_tree_1']/span")).click();
-	    driver.findElement(By.cssSelector("#_easyui_tree_2 > span.tree-title")).click();
-	    Thread.sleep(1000);
-	    driver.switchTo().frame("ifrf");
-	    Thread.sleep(1000);
-	    driver.findElement(By.id("51c7da04a8b8440aa6582f5827db3d25")).click();
-	    Thread.sleep(4000);
-	    driver.findElement(By.cssSelector("span.l-btn-text")).click();
-	    */
 	}
 
 	@Test
 	public void testInputBox() throws Exception {
 		
 		log.info("***Run case of testInputBox.***");
+		PrintFlag = true;
+		
 		//输入框测试
 		try {
 			String filePath = CommFunc.getTestDataFile();
@@ -67,12 +55,10 @@ public class ControlsStockTest{
 		} catch (Exception e) {
 			log.error("InputBox is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
-		}		
+		}	
+		PrintFlag = false;
 	}
 
 	
@@ -80,6 +66,8 @@ public class ControlsStockTest{
 	public void testDateControl() throws Exception {
 		
 		log.info("***Run case of testDateControl.***");
+		PrintFlag = true;
+		
 		//日期控件测试
 		try {
 			driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[2]/td[4]/span")).click();
@@ -88,21 +76,22 @@ public class ControlsStockTest{
 			driver.findElement(By.id("dpTodayInput")).click();
 			driver.switchTo().defaultContent();
 			driver.switchTo().frame("ifrf");
+			
 		} catch (Exception e) {
 			log.error("DateControl is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
-		}			 
+		}	
+		PrintFlag = false;
 	}
 	
 	@Test
 	public void testMultiSelect() throws Exception {
 		
 		log.info("***Run case of testMultiSelect.***");
+		PrintFlag = true;
+		
 		//多选下拉框测试
 		try {
 		    driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[3]/td[4]/span/span/a")).click();
@@ -113,18 +102,18 @@ public class ControlsStockTest{
 		} catch (Exception e) {
 			log.error("MultiSelect is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
-		}	    	    
+		}	  
+		PrintFlag = false;
 	}
 	
 	@Test
 	public void testSingleSelect() throws Exception {
 		
 		log.info("***Run case of testSingleSelect.***");
+		PrintFlag = true;
+		
 		//单选框下拉测试
 		try {
 		    driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[4]/td[4]/span/span/a")).click();
@@ -132,19 +121,18 @@ public class ControlsStockTest{
 		} catch (Exception e) {
 			log.error("SingleSelect is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
 		}	  
-	
+		PrintFlag = false;
 	}
 	
 	@Test
 	public void testMultiSelectTree() throws Exception {
 		
 		log.info("***Run case of testMultiSelectTree.***");
+		PrintFlag = true;
+		
 		//多选树测试
 		try {
 			driver.findElement(By.xpath("//div[@id='modify_div_AREA']")).click();
@@ -157,13 +145,10 @@ public class ControlsStockTest{
 		} catch (Exception e) {
 			log.error("MultiSelectTree is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
 		}	     
-	    
+		PrintFlag = false;  
 	    
 	}
 	
@@ -171,6 +156,8 @@ public class ControlsStockTest{
 	public void testSingleSelectTree() throws Exception {
 		
 		log.info("***Run case of testSingleSelectTree.***");
+		PrintFlag = true;
+		
 		//单选树测试
 		try {
 		    driver.findElement(By.xpath("//div[@id='modify_div_DEPARTMENT']")).click();
@@ -183,12 +170,10 @@ public class ControlsStockTest{
 		} catch (Exception e) {
 			log.error("SingleSelectTree is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
-		}	     
+		}
+		PrintFlag = false;
 	}
 	
 }

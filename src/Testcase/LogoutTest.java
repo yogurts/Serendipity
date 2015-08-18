@@ -6,13 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-
-import com.Core.CaptureScreenshot;
-
+import com.Core.BaseClass;
 import TestVerify.StockVerify;
-import Testcase.PageTest;
 
 /** 
  * @author Lili.Sun  
@@ -20,18 +15,15 @@ import Testcase.PageTest;
  *  
  */
 
-public class LogoutTest{
+public class LogoutTest extends BaseClass{
 	
-	private String ScreenShotFileName = "";
 	private static final Logger log = LoggerFactory.getLogger(LogoutTest.class);
-	private StringBuffer verificationErrors = new StringBuffer();
-	WebDriver driver = PageTest.driver;
 		
 	@Test
 	public void testLogoutStock() throws Exception {
 		
 		log.info("***Run case of testLogoutStock.***");
-		
+		PrintFlag = true;
 		try {			
 			driver.switchTo().defaultContent();
 			driver.findElement(By.cssSelector("a[title=\"退出\"] > img")).click();
@@ -40,12 +32,10 @@ public class LogoutTest{
 		} catch (Exception e) {
 			log.error("LogoutStock is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
 		}	 
+		PrintFlag = false;
 	}
 	
 }

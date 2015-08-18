@@ -5,16 +5,10 @@ import static org.junit.Assert.fail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 
-import com.Core.CaptureScreenshot;
-
+import com.Core.BaseClass;
 import TestScript.RadioBoxTS;
-import TestSuite.RadioBoxTest;
 import TestVerify.StockVerify;
-import Testcase.PageTest;
 
 /** 
  * @author Lili.Sun  
@@ -22,16 +16,14 @@ import Testcase.PageTest;
  *  
  */
 
-public class RadioLogoutTest{
+public class RadioLogoutTest extends BaseClass{
 	
-	private String ScreenShotFileName = "";
 	private static final Logger log = LoggerFactory.getLogger(RadioLogoutTest.class);
-	private StringBuffer verificationErrors = new StringBuffer();
-	WebDriver driver = RadioboxInitial.driver;
 		
 	@Test
 	public void testLogoutRadio() throws Exception {
 		log.info("***Run case of testLogoutRadio.***");
+		PrintFlag = true;
 		
 		try {			
 			RadioBoxTS.outRadio(driver);
@@ -40,12 +32,11 @@ public class RadioLogoutTest{
 		} catch (Exception e) {
 			log.error("LogoutStock is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
 		}	 
+		
+		PrintFlag = false;
 	}
 	
 }

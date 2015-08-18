@@ -9,13 +9,11 @@ import org.junit.*;
 
 import static org.junit.Assert.*;
 
-import org.openqa.selenium.*;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import TestScript.LoginTS;
-import TestVerify.StockVerify;
 
-import com.Core.CaptureScreenshot;
+import com.Core.BaseClass;
 import com.Core.CommFunc;
 import com.csvreader.CsvReader;
 
@@ -26,14 +24,10 @@ import com.csvreader.CsvReader;
  *  
  */
 
-public class RadioboxInitial {
+public class RadioboxInitial extends BaseClass{
 	
 	  private static final Logger log = LoggerFactory.getLogger(RadioboxInitial.class);
-	  public static WebDriver driver;
 	  private String baseUrl;
-	  private StringBuffer verificationErrors = new StringBuffer();
-	  private boolean PrintFlag = true;
-	  private String ScreenShotFileName = "";
 
 	  @Before
 	  public void setUp() throws Exception {
@@ -49,6 +43,7 @@ public class RadioboxInitial {
 	  @Test
 	  public void testLogin() throws Exception {
 		log.info("***Run case of testLogin.***");
+		PrintFlag = true;
 		driver.get(baseUrl + "/ks-main/web/loginPage");
 		driver.manage().window().maximize();
 	
@@ -65,18 +60,13 @@ public class RadioboxInitial {
 		} catch (Exception e) {
 			log.error("login is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
 		}		
-			
-		
 		PrintFlag = false;
 	  }
 
-
+	  /*
 	  @After
 	  public void tearDown() throws Exception {
 	    //driver.quit();
@@ -88,5 +78,5 @@ public class RadioboxInitial {
 					.click();
 			driver.switchTo().frame("ifrf");
 	  }
-	  
+	  */
 }

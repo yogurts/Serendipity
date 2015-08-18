@@ -73,6 +73,29 @@ public class StockPage {
 	@CacheLookup
 	public WebElement addstock5;
 	
+	//Parameter:添加日期
+	@FindBy(xpath = "//form[@id='modifyForm']/table/tbody/tr[2]/td[4]/span")
+	@CacheLookup
+	public WebElement addDatestock1;
+	
+	//Parameter:添加日期
+	@FindBy(xpath = "//iframe[@border='0']")
+	@CacheLookup
+	public WebElement addDatestock2;
+	
+	//Parameter:添加日期
+	@FindBy(id = "dpTodayInput")
+	@CacheLookup
+	public WebElement addDatestock3;
+
+	/*
+	driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[2]/td[4]/span")).click();
+	driver.findElement(By.xpath("//iframe[@border='0']"));
+	driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@border='0']")));
+	driver.findElement(By.id("dpTodayInput")).click();
+	driver.switchTo().defaultContent();
+	driver.switchTo().frame("ifrf");
+    */
 	
 	
 	/**

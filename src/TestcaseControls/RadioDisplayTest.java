@@ -6,16 +6,11 @@ import org.junit.*;
 
 import static org.junit.Assert.*;
 
-import org.openqa.selenium.*;
-
 import TestScript.RadioBoxTS;
 import TestVerify.RadioBoxVerify;
-import Testcase.PageTest;
 
+import com.Core.BaseClass;
 import com.Core.CaptureScreenshot;
-import com.Core.CommFunc;
-import com.csvreader.CsvReader;
-
 
 /** 
  * @author Lili.Sun  
@@ -23,17 +18,16 @@ import com.csvreader.CsvReader;
  *  
  */
 
-public class RadioDisplayTest {
+public class RadioDisplayTest extends BaseClass{
 	
 	  private static final Logger log = LoggerFactory.getLogger(RadioDisplayTest.class);
-	  private boolean PrintFlag = true;
-	  private String ScreenShotFileName = "";
-	  WebDriver driver = RadioboxInitial.driver;
 
 	  //标题、  显示顺序、  缺省值
 	  @Test
 	  public void testRadioboxDisplay() throws Exception {
 		log.info("***Run case of testRadioboxDisplay.***");
+		PrintFlag = true;
+		
 		try {
 			RadioBoxTS.displayRadio(driver);
 			RadioBoxVerify.displayVerify(driver);
@@ -41,13 +35,9 @@ public class RadioDisplayTest {
 		} catch (Exception e) {
 			log.error("testRadioboxDisplay is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
 		}		
-			
 		
 		PrintFlag = false;
 	  }

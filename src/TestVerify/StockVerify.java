@@ -13,6 +13,7 @@ import Testcase.PageTest;
 import TestcaseControls.RadioboxInitial;
 
 import com.Core.AssertUtils;
+import com.Core.BaseClass;
 import com.Core.CommFunc;
 import com.Model.*;
 import com.csvreader.CsvReader;
@@ -26,13 +27,13 @@ import com.csvreader.CsvReader;
  */
 
 
-public class StockVerify {
+public class StockVerify{
 	
 	private static final Logger log = LoggerFactory.getLogger(StockVerify.class);
 
 	static NowDate today = new NowDate();
 	static StockBeanCl sbc =  new StockBeanCl();
-	static WebDriver driver = PageTest.driver;
+	//static WebDriver driver = PageTest.driver;
 	
 	static String verify_title;
 	static String verify_stockName;
@@ -99,9 +100,10 @@ public class StockVerify {
 	
 	public static void alterStockVerify(WebDriver driver) throws Exception  {
 		
-		sv.testStockVerify();
+		//sv.testStockVerify();
 		//assertEquals(verify_stockAlter, sbc.checkStockName(today.getDate()));
-		AssertUtils.assertTrue(verify_stockAlter.equals(sbc.checkStockName(today.getDate())), "verify_stockAlter is not ");
+		//AssertUtils.assertTrue(verify_stockAlter.equals(sbc.checkStockName(today.getDate())), "verify_stockAlter is not ");
+		Assert.assertTrue(driver.findElement(By.cssSelector("div.datagrid-cell-rownumber")).isDisplayed());
 	    
 	}
 	

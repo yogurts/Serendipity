@@ -8,12 +8,11 @@ import org.slf4j.LoggerFactory;
 import org.junit.*;
 
 import static org.junit.Assert.*;
-
-import org.openqa.selenium.*;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import TestVerify.StockVerify;
-import com.Core.CaptureScreenshot;
+
+import com.Core.BaseClass;
 
 
 /** 
@@ -22,14 +21,11 @@ import com.Core.CaptureScreenshot;
  *  
  */
 
-public class PageTest {
+public class PageTest extends BaseClass{
 	
 	  private static final Logger log = LoggerFactory.getLogger(PageTest.class);
-	  public static WebDriver driver;
+	  //public static WebDriver driver;
 	  private String baseUrl;
-	  private StringBuffer verificationErrors = new StringBuffer();
-	  private boolean PrintFlag = true;
-	  private String ScreenShotFileName = "";
 
 	  @Before
 	  public void setUp() throws Exception {
@@ -44,7 +40,7 @@ public class PageTest {
 	  
 	  @Test
 	  public void testPage() throws Exception {
-		log.info("***Run case of testLogin.***");
+		log.info("***Run case of testPage.***");
 		
 	
 		try {			
@@ -55,18 +51,15 @@ public class PageTest {
 		} catch (Exception e) {
 			log.error("page is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
-		    fail("failure");
+			fail("failure");
 			return;
 		}		
-			
-		
+		//xxx = "456";
 		PrintFlag = false;
+		
 	  }
-
-
+	  
+/*
 	  @After
 	  public void tearDown() throws Exception {
 	    //driver.quit();
@@ -75,5 +68,5 @@ public class PageTest {
 	      fail(verificationErrorString);
 	    }
 	  }
-	  
+*/	  
 }

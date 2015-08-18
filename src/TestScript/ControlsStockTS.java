@@ -3,7 +3,11 @@ package TestScript;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
 
+import com.Core.CommFunc;
 import com.PageObjects.RadioboxPage;
 import com.PageObjects.StockPage;
 import com.csvreader.CsvReader;
@@ -51,6 +55,19 @@ public class ControlsStockTS {
 	}
 	
 	public static void addStock(WebDriver driver) throws Exception {
+		
+		/*
+		driver.findElement(By.xpath("//a[contains(text(),'股票系统')]")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//div[@id='_easyui_tree_1']/span")).click();
+	    driver.findElement(By.cssSelector("#_easyui_tree_2 > span.tree-title")).click();
+	    Thread.sleep(1000);
+	    driver.switchTo().frame("ifrf");
+	    Thread.sleep(1000);
+	    driver.findElement(By.id("51c7da04a8b8440aa6582f5827db3d25")).click();
+	    Thread.sleep(4000);
+	    driver.findElement(By.cssSelector("span.l-btn-text")).click();
+	    */
 		stockPage.addstock1.click();
 	    Thread.sleep(2000);
 	    stockPage.addstock2.click();
@@ -65,7 +82,7 @@ public class ControlsStockTS {
 	    log.info("Title is:" + driver.getTitle());	
 	}
 
-	
+
 	
 /*
 	

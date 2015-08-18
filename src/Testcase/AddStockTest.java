@@ -6,12 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
-import com.Core.CaptureScreenshot;
-
+import com.Core.BaseClass;
 import TestVerify.StockVerify;
-import Testcase.PageTest;
 
 
 /** 
@@ -20,31 +16,29 @@ import Testcase.PageTest;
  *  
  */
 
-public class AddStockTest{
+public class AddStockTest extends BaseClass{
 	
-	private String ScreenShotFileName = "";
 	private static final Logger log = LoggerFactory.getLogger(AddStockTest.class);
-	private StringBuffer verificationErrors = new StringBuffer();
-	WebDriver driver = PageTest.driver;
-		
+	
 	@Test
 	public void testSave() throws Exception {
 		log.info("***Run case of testSave.***");
+		PrintFlag = true;
 		//保存 
-		try {			
+		try {
 			driver.findElement(By.xpath("//div[@class='panel window']/div[@class='dialog-button']/a/span/span")).click();
+			//CommFunc.waitForExists(driver, 10, By.xpath("//a[contains(text(),'退出')]"));
 			Thread.sleep(2000);
 			StockVerify.addStockVerify(driver);
 			
 		} catch (Exception e) {
 			log.error("Save is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
-		    fail("failure");
+			fail("failure");
 			return;
-		}		
+		}	
+		
+		PrintFlag = false;
 	}
 
 }

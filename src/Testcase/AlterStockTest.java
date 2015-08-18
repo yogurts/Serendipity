@@ -6,10 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-import com.Core.CaptureScreenshot;
-
+import com.Core.BaseClass;
+import com.Core.CommFunc;
 import TestVerify.StockVerify;
 
 /** 
@@ -19,38 +18,36 @@ import TestVerify.StockVerify;
  */
 
 
-public class AlterStockTest{
+public class AlterStockTest extends BaseClass{
 	
-	private String ScreenShotFileName = "";
 	private static final Logger log = LoggerFactory.getLogger(AlterStockTest.class);  
-	private StringBuffer verificationErrors = new StringBuffer();
-	WebDriver driver = PageTest.driver;
 		
 	@Test
 	public void testAlterStock() throws Exception {
 		
 		log.info("***Run case of testAlterStock.***");
+		PrintFlag = true;
 		//修改
-		try {			
+		try {
 			driver.findElement(By.xpath("//a[@id='search']/span")).click();
-			Thread.sleep(2000);
+			CommFunc.waitForExists(driver, 10, By.xpath("//div[2]/table/tbody/tr/td/div/input"));
 			driver.findElement(By.xpath("//div[2]/table/tbody/tr/td/div/input")).click();
+			CommFunc.waitForExists(driver, 10, By.xpath("//a[2]/span/span"));
 			driver.findElement(By.xpath("//a[2]/span/span")).click();
+			CommFunc.waitForExists(driver, 10, By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input"));
 			driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input")).clear();
 			driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input")).sendKeys("2");
 			driver.findElement(By.xpath("//div[3]/a/span/span")).click();
-			Thread.sleep(6000);
+			CommFunc.waitForExists(driver, 10, By.cssSelector("div.datagrid-cell-rownumber"));
 			StockVerify.alterStockVerify(driver);
 			
 		} catch (Exception e) {
 			log.error("AlterStock is error", e);
 			e.printStackTrace();
-			CaptureScreenshot CSShot = new CaptureScreenshot();
-		    ScreenShotFileName = CSShot.getScreenshotName(this, Thread.currentThread().getStackTrace()[1]);
-		    CSShot.captureScreen(driver, ScreenShotFileName);
 		    fail("failure");
 			return;
-		}	
+		}
+		PrintFlag = false;
 	}
 	
 
