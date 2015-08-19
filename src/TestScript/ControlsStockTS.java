@@ -1,23 +1,9 @@
 package TestScript;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindBy;
-
-import com.Core.CommFunc;
-import com.PageObjects.RadioboxPage;
 import com.PageObjects.StockPage;
 import com.csvreader.CsvReader;
-
-import Testcase.AddStockTest;
-import Testcase.AlterStockTest;
-import Testcase.ControlsStockTest;
-import Testcase.DelStockTest;
-import Testcase.LoginTest;
-import Testcase.LogoutTest;
 import Testcase.PageTest;
 
 /** 
@@ -30,7 +16,6 @@ public class ControlsStockTS {
 	
 	
 	private static Logger log = Logger.getLogger(ControlsStockTS.class.getName());
-	private StringBuffer verificationErrors = new StringBuffer();
 	static WebDriver driver = PageTest.driver;
 	static StockPage stockPage = new StockPage(driver);	
 

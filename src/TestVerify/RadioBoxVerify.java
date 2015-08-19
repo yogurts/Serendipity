@@ -4,14 +4,9 @@ package TestVerify;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 
-import TestScript.NowDate;
 import TestcaseControls.RadioboxInitial;
 
 import com.Core.AssertUtils;
@@ -32,9 +27,6 @@ import com.thoughtworks.selenium.DefaultSelenium;
 public class RadioBoxVerify {
 	
 	public static DefaultSelenium selenium;
-	
-	private static final Logger log = LoggerFactory.getLogger(RadioBoxVerify.class);
-
 	static ControlBeanCl cbc =  new ControlBeanCl();
 	static WebDriver driver = RadioboxInitial.driver;
 	

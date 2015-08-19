@@ -2,8 +2,10 @@ package TestScript;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.Core.CommFunc;
 import com.PageObjects.LoginPage;
 import com.csvreader.CsvReader;
 
@@ -27,7 +29,7 @@ public class LoginTS {
 	    loginPage.password.clear();
 	    loginPage.password.sendKeys(password);
 	    loginPage.loginBtn.click();
-	    Thread.sleep(2000);
+	    CommFunc.waitForExists(driver, 10, By.xpath("//a[contains(text(),'股票系统')]"));
 	    
 	    log.info("Title is:" + driver.getTitle());	 
 		

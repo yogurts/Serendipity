@@ -1,25 +1,9 @@
 package com.Model;
 
-import java.awt.AWTException;
-import java.awt.Dimension;
-import java.awt.Rectangle;
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Date;
 
-import javax.imageio.ImageIO;
-
-import org.openqa.selenium.remote.server.handler.GetScreenOrientation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import oracle.net.aso.a;
-import Testcase.PageTest;
-import bsh.This;
 
 import com.Core.CommFunc;
 import com.csvreader.CsvReader;

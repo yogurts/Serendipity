@@ -7,17 +7,12 @@ import org.slf4j.LoggerFactory;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 import com.Core.BaseClass;
-import com.Core.CaptureScreenshot;
 import com.Core.CommFunc;
 import com.csvreader.CsvReader;
 
 import TestScript.ControlsStockTS;
-import Testcase.PageTest;
-
-import java.io.IOException;
 import java.nio.charset.Charset;
 
 /** 

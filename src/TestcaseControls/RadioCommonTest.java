@@ -13,6 +13,7 @@ import TestScript.RadioBoxTS;
 import TestVerify.RadioBoxVerify;
 
 import com.Core.BaseClass;
+import com.Core.CommFunc;
 
 
 /** 
@@ -28,7 +29,7 @@ public class RadioCommonTest extends BaseClass{
 	  @Before
 	  public void setUp() throws Exception {
 		    driver.findElement(By.xpath("//a[contains(text(),'股票系统')]")).click();
-			Thread.sleep(2000);
+		    CommFunc.waitForExists(driver, 10, By.xpath("//div[@id='_easyui_tree_1']/span"));
 			driver.findElement(By.xpath("//div[@id='_easyui_tree_1']/span"))
 					.click();
 			driver.findElement(By.cssSelector("#_easyui_tree_3 > span.tree-title"))

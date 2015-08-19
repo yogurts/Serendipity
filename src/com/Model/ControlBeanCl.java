@@ -9,7 +9,6 @@ public class ControlBeanCl {
 	private java.sql.Statement sm=null;
 	private ResultSet rs=null;
 	private Connection conn=null;
-	private String stockName=null;
 	
 	DBOracle dbo =  new DBOracle();
 	

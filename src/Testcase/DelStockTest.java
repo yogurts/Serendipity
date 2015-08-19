@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 
 import com.Core.BaseClass;
+import com.Core.CommFunc;
+
 import TestVerify.StockVerify;
 
 /** 
@@ -29,11 +31,12 @@ public class DelStockTest extends BaseClass{
 		//删除
 		try {
 			driver.findElement(By.xpath("//a[@id='search']/span")).click();
-			Thread.sleep(2000);
+			CommFunc.waitForExists(driver, 10, By.xpath("//input[@name='ck']"));
 			driver.findElement(By.xpath("//div[2]/table/tbody/tr/td/div/input")).click();
 			driver.findElement(By.xpath("//a[3]/span/span[2]")).click();
 			driver.findElement(By.xpath("//div[4]/a/span/span")).click();
 			Thread.sleep(4000);
+			
 			StockVerify.delStockVerify(driver);
 		
 		} catch (Exception e) {

@@ -2,13 +2,10 @@ package TestScript;
 
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import TestcaseControls.RadioboxInitial;
-
 import com.PageObjects.RadioboxPage;
-import com.csvreader.CsvReader;
 
 
 /**
@@ -25,7 +22,6 @@ public class RadioBoxTS{
 	public static void commonRadio(WebDriver driver) throws Exception {
 		rbPage.stockNamepulldown.click();
 		rbPage.stockNameselect.click();
-	    Thread.sleep(1000);
 	    
 	    log.info("Title is:" + driver.getTitle());	 		
 	}
@@ -33,7 +29,6 @@ public class RadioBoxTS{
 	public static void displayRadio(WebDriver driver) throws Exception {
 		rbPage.displaypulldown.click();
 		rbPage.displayselect.click();
-	    Thread.sleep(1000);
 	    
 	    log.info("Title is:" + driver.getTitle());	
 	}
@@ -41,7 +36,6 @@ public class RadioBoxTS{
 	public static void operatorRadio(WebDriver driver) throws Exception {
 		rbPage.operatorpulldown.click();
 		rbPage.operatorselect.click();
-		Thread.sleep(1000);
 	    
 	    log.info("Title is:" + driver.getTitle());	
 		
@@ -52,7 +46,6 @@ public class RadioBoxTS{
 		rbPage.hiddenpulldown2.click();
 		rbPage.hiddenpulldown3.click();
 		rbPage.hiddenselect.click();
-		Thread.sleep(1000);
 	    
 	    log.info("Title is:" + driver.getTitle());	
 		
@@ -60,7 +53,6 @@ public class RadioBoxTS{
 	
 	public static void requiredfieldRadio(WebDriver driver) throws Exception {
 		rbPage.search.click();
-		Thread.sleep(1000);
 	    
 	    log.info("Title is:" + driver.getTitle());	
 		
@@ -69,7 +61,6 @@ public class RadioBoxTS{
 	public static void parentRadio(WebDriver driver) throws Exception {
 		rbPage.parentpulldown.click();
 		rbPage.parentselect.click();
-		Thread.sleep(1000);
 	    
 	    log.info("Title is:" + driver.getTitle());	
 		
@@ -78,7 +69,6 @@ public class RadioBoxTS{
 	public static void childRadio(WebDriver driver) throws Exception {
 		rbPage.childpulldown.click();
 		rbPage.childselect.click();
-		Thread.sleep(1000);
 	    
 	    log.info("Title is:" + driver.getTitle());	
 		
@@ -93,7 +83,6 @@ public class RadioBoxTS{
 		rbPage.search3.click();
 		rbPage.search4.click();
 		rbPage.search5.click();
-		Thread.sleep(1000);
 	    
 	    log.info("Title is:" + driver.getTitle());	
 	}
@@ -101,7 +90,6 @@ public class RadioBoxTS{
 	public static void outRadio(WebDriver driver) throws Exception {
 		driver.switchTo().defaultContent();
 		rbPage.outradio.click();
-		Thread.sleep(1000);
 	    
 	    log.info("Title is:" + driver.getTitle());	
 		

@@ -10,7 +10,6 @@ import TestScript.RadioBoxTS;
 import TestVerify.RadioBoxVerify;
 
 import com.Core.BaseClass;
-import com.Core.CaptureScreenshot;
 
 /** 
  * @author Lili.Sun  

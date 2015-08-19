@@ -30,11 +30,11 @@ public class AlterStockTest extends BaseClass{
 		//修改
 		try {
 			driver.findElement(By.xpath("//a[@id='search']/span")).click();
-			CommFunc.waitForExists(driver, 10, By.xpath("//div[2]/table/tbody/tr/td/div/input"));
-			driver.findElement(By.xpath("//div[2]/table/tbody/tr/td/div/input")).click();
-			CommFunc.waitForExists(driver, 10, By.xpath("//a[2]/span/span"));
+			CommFunc.waitForExists(driver, 10, By.xpath("//div[2]/table/tbody/tr/td/div"));
+			driver.findElement(By.xpath("//input[@type='checkbox']")).click();
+			//CommFunc.waitForExists(driver, 10, By.xpath("//a[2]/span/span"));
+			//div[@id='grid']/div/div/div[2]/div[2]/div/div/table/tbody/tr/td/div/input
 			driver.findElement(By.xpath("//a[2]/span/span")).click();
-			CommFunc.waitForExists(driver, 10, By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input"));
 			driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input")).clear();
 			driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input")).sendKeys("2");
 			driver.findElement(By.xpath("//div[3]/a/span/span")).click();

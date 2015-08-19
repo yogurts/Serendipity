@@ -1,7 +1,5 @@
 package com.Model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 
 public class ConnDB {
 /*

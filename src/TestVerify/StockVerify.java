@@ -4,16 +4,11 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 
 import org.junit.Assert;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.openqa.selenium.*;
 
 import TestScript.NowDate;
-import Testcase.PageTest;
-import TestcaseControls.RadioboxInitial;
 
 import com.Core.AssertUtils;
-import com.Core.BaseClass;
 import com.Core.CommFunc;
 import com.Model.*;
 import com.csvreader.CsvReader;
@@ -29,11 +24,8 @@ import com.csvreader.CsvReader;
 
 public class StockVerify{
 	
-	private static final Logger log = LoggerFactory.getLogger(StockVerify.class);
-
 	static NowDate today = new NowDate();
 	static StockBeanCl sbc =  new StockBeanCl();
-	//static WebDriver driver = PageTest.driver;
 	
 	static String verify_title;
 	static String verify_stockName;

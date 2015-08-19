@@ -6,7 +6,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.junit.Test;
 import org.openqa.selenium.By;
+
 import com.Core.BaseClass;
+import com.Core.CommFunc;
+
 import TestVerify.StockVerify;
 
 
@@ -27,7 +30,7 @@ public class AddStockTest extends BaseClass{
 		//保存 
 		try {
 			driver.findElement(By.xpath("//div[@class='panel window']/div[@class='dialog-button']/a/span/span")).click();
-			//CommFunc.waitForExists(driver, 10, By.xpath("//a[contains(text(),'退出')]"));
+			CommFunc.waitForExists(driver, 10, By.xpath("//a[@id='search']/span"));
 			Thread.sleep(2000);
 			StockVerify.addStockVerify(driver);
 			

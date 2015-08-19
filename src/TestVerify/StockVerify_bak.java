@@ -4,9 +4,6 @@ package TestVerify;
 import static org.junit.Assert.*;
 
 import org.junit.Assert;
-import org.apache.log4j.Logger;
-
-
 import TestScript.NowDate;
 
 import com.Model.*;
@@ -24,8 +21,6 @@ import org.openqa.selenium.WebDriver;
 
 public class StockVerify_bak {
 	
-	private static Logger log = Logger.getLogger(StockVerify_bak.class.getName());
-
 	static NowDate today = new NowDate();
 	static StockBeanCl sbc =  new StockBeanCl();
 	
