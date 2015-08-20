@@ -30,10 +30,14 @@ public class DelStockTest extends BaseClass{
 		PrintFlag = true;
 		//删除
 		try {
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//a[@id='search']/span")));
 			driver.findElement(By.xpath("//a[@id='search']/span")).click();
 			CommFunc.waitForExists(driver, 10, By.xpath("//input[@name='ck']"));
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[2]/table/tbody/tr/td/div/input")));
 			driver.findElement(By.xpath("//div[2]/table/tbody/tr/td/div/input")).click();
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//a[3]/span/span[2]")));
 			driver.findElement(By.xpath("//a[3]/span/span[2]")).click();
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[4]/a/span/span")));
 			driver.findElement(By.xpath("//div[4]/a/span/span")).click();
 			Thread.sleep(4000);
 			

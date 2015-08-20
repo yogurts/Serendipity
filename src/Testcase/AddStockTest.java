@@ -29,6 +29,7 @@ public class AddStockTest extends BaseClass{
 		PrintFlag = true;
 		//保存 
 		try {
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@class='panel window']/div[@class='dialog-button']/a/span/span")));
 			driver.findElement(By.xpath("//div[@class='panel window']/div[@class='dialog-button']/a/span/span")).click();
 			CommFunc.waitForExists(driver, 10, By.xpath("//a[@id='search']/span"));
 			Thread.sleep(2000);

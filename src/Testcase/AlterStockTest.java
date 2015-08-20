@@ -29,14 +29,19 @@ public class AlterStockTest extends BaseClass{
 		PrintFlag = true;
 		//修改
 		try {
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//a[@id='search']/span")));
 			driver.findElement(By.xpath("//a[@id='search']/span")).click();
-			CommFunc.waitForExists(driver, 10, By.xpath("//div[2]/table/tbody/tr/td/div"));
-			driver.findElement(By.xpath("//input[@type='checkbox']")).click();
-			//CommFunc.waitForExists(driver, 10, By.xpath("//a[2]/span/span"));
-			//div[@id='grid']/div/div/div[2]/div[2]/div/div/table/tbody/tr/td/div/input
+			CommFunc.waitForExists(driver, 10, By.xpath("//div[2]/table/tbody/tr/td/div/input"));
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[2]/table/tbody/tr/td/div/input")));
+			driver.findElement(By.xpath("//div[2]/table/tbody/tr/td/div/input")).click();
+			CommFunc.waitForExists(driver, 10, By.xpath("//a[2]/span/span"));
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//a[2]/span/span")));
 			driver.findElement(By.xpath("//a[2]/span/span")).click();
+			CommFunc.waitForExists(driver, 10, By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input"));
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input")));
 			driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input")).clear();
 			driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr/td[2]/span/input")).sendKeys("2");
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[3]/a/span/span")));
 			driver.findElement(By.xpath("//div[3]/a/span/span")).click();
 			CommFunc.waitForExists(driver, 10, By.cssSelector("div.datagrid-cell-rownumber"));
 			StockVerify.alterStockVerify(driver);

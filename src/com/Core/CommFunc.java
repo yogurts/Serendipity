@@ -189,4 +189,16 @@ public class CommFunc {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     } 
+    
+ 
+    //高亮显示
+    public static void highlightElement(WebDriver driver, WebElement element) {
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+    	js.executeScript("element = arguments[0];" +
+    	"original_style = element.getAttribute('style');" +
+    	"element.setAttribute('style', original_style + \";" +
+    	"background: yellow; border: 1px solid red;\");" +
+    	"setTimeout(function(){element.setAttribute('style', original_style);}, 1000);", element);
+    }
+
 }

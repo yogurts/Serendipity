@@ -65,9 +65,11 @@ public class ControlsStockTest extends BaseClass{
 		
 		//日期控件测试
 		try {
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[2]/td[4]/span")));
 			driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[2]/td[4]/span")).click();
 		    driver.findElement(By.xpath("//iframe[@border='0']"));
 			driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@border='0']")));
+			CommFunc.highlightElement(driver,driver.findElement(By.id("dpTodayInput")));
 			driver.findElement(By.id("dpTodayInput")).click();
 			driver.switchTo().defaultContent();
 			driver.switchTo().frame("ifrf");
@@ -89,9 +91,13 @@ public class ControlsStockTest extends BaseClass{
 		
 		//多选下拉框测试
 		try {
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[3]/td[4]/span/span/a")));
 		    driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[3]/td[4]/span/span/a")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='_easyui_combobox_i5_2']")));
 		    driver.findElement(By.xpath("//div[@id='_easyui_combobox_i5_2']")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='_easyui_combobox_i5_6']")));
 		    driver.findElement(By.xpath("//div[@id='_easyui_combobox_i5_6']")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[4]/td[2]/span/input")));
 		    driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[4]/td[2]/span/input")).clear();
 		    driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[4]/td[2]/span/input")).sendKeys("15.9");
 		} catch (Exception e) {
@@ -111,7 +117,9 @@ public class ControlsStockTest extends BaseClass{
 		
 		//单选框下拉测试
 		try {
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[4]/td[4]/span/span/a")));
 		    driver.findElement(By.xpath("//form[@id='modifyForm']/table/tbody/tr[4]/td[4]/span/span/a")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='_easyui_combobox_i6_1']")));
 		    driver.findElement(By.xpath("//div[@id='_easyui_combobox_i6_1']")).click();
 		} catch (Exception e) {
 			log.error("SingleSelect is error", e);
@@ -130,12 +138,18 @@ public class ControlsStockTest extends BaseClass{
 		
 		//多选树测试
 		try {
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='modify_div_AREA']")));
 			driver.findElement(By.xpath("//div[@id='modify_div_AREA']")).click();
 		    Thread.sleep(1000);
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='_easyui_tree_2']/span[@class='tree-checkbox tree-checkbox0']")));
 		    driver.findElement(By.xpath("//div[@id='_easyui_tree_2']/span[@class='tree-checkbox tree-checkbox0']")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='_easyui_tree_3']/span[@class='tree-checkbox tree-checkbox0']")));
 		    driver.findElement(By.xpath("//div[@id='_easyui_tree_3']/span[@class='tree-checkbox tree-checkbox0']")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@class='panel window'][2]")));
 		    //driver.findElement(By.xpath("//div[@class='panel window'][2]")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='dia_modify_t_AREA']/div/table/tbody/tr[2]/td[2]/input[@id='selectTo']")));
 		    driver.findElement(By.xpath("//div[@id='dia_modify_t_AREA']/div/table/tbody/tr[2]/td[2]/input[@id='selectTo']")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@class='panel window'][2]/div[@class='dialog-button']/a/span/span")));
 		    driver.findElement(By.xpath("//div[@class='panel window'][2]/div[@class='dialog-button']/a/span/span")).click();
 		} catch (Exception e) {
 			log.error("MultiSelectTree is error", e);
@@ -155,12 +169,19 @@ public class ControlsStockTest extends BaseClass{
 		
 		//单选树测试
 		try {
+			CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='modify_div_DEPARTMENT']")));
 		    driver.findElement(By.xpath("//div[@id='modify_div_DEPARTMENT']")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@class='panel window'][2]")));
 		    driver.findElement(By.xpath("//div[@class='panel window'][2]")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='dia_modify_t_DEPARTMENT']/div[@class='tablecontent']/table/tbody/tr[2]/td/ul/li/ul/li")));
 		    driver.findElement(By.xpath("//div[@id='dia_modify_t_DEPARTMENT']/div[@class='tablecontent']/table/tbody/tr[2]/td/ul/li/ul/li")).click();  
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='dia_modify_t_DEPARTMENT']/div[@class='tablecontent']/table/tbody/tr[2]/td/ul/li/ul/li/ul/li")));
 		    driver.findElement(By.xpath("//div[@id='dia_modify_t_DEPARTMENT']/div[@class='tablecontent']/table/tbody/tr[2]/td/ul/li/ul/li/ul/li")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='dia_modify_t_DEPARTMENT']/div[@class='tablecontent']/table/tbody/tr[2]/td/ul/li/ul/li/ul/li/ul/li")));
 		    driver.findElement(By.xpath("//div[@id='dia_modify_t_DEPARTMENT']/div[@class='tablecontent']/table/tbody/tr[2]/td/ul/li/ul/li/ul/li/ul/li")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@id='dia_modify_t_DEPARTMENT']/div/table/tbody/tr[2]/td[2]/input[@id='selectTo']")));
 		    driver.findElement(By.xpath("//div[@id='dia_modify_t_DEPARTMENT']/div/table/tbody/tr[2]/td[2]/input[@id='selectTo']")).click();
+		    CommFunc.highlightElement(driver,driver.findElement(By.xpath("//div[@class='panel window'][2]/div[@class='dialog-button']/a/span/span")));
 		    driver.findElement(By.xpath("//div[@class='panel window'][2]/div[@class='dialog-button']/a/span/span")).click();
 		} catch (Exception e) {
 			log.error("SingleSelectTree is error", e);

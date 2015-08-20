@@ -6,7 +6,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.junit.Test;
 import org.openqa.selenium.By;
+
 import com.Core.BaseClass;
+import com.Core.CommFunc;
+
 import TestVerify.StockVerify;
 
 /** 
@@ -26,6 +29,7 @@ public class LogoutTest extends BaseClass{
 		PrintFlag = true;
 		try {			
 			driver.switchTo().defaultContent();
+			CommFunc.highlightElement(driver,driver.findElement(By.cssSelector("a[title=\"退出\"] > img")));
 			driver.findElement(By.cssSelector("a[title=\"退出\"] > img")).click();
 			StockVerify.logoutStockVerify(driver);		
 		
